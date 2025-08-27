@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: about-deploy
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: about
+  template:
+    metadata:
+      labels:
+        app: about
+    spec:
+      containers:
+      - name: about
+        image: caduunisal/meusite-about:latest
+        ports:
+        - containerPort: 80
+
